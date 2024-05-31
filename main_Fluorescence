@@ -3,9 +3,9 @@ clc
 
 
 % Load data
-T = readmatrix('Pink_Green_S.CSV');
-x = T(:,1); % Excitation wavelength range
-y = 300:10:700; % Emission wavelength range
+T = readmatrix('samples/Pink_Green_S.CSV');
+x = T(:,1); 
+y = 300:10:700; 
 
 % Remove the excitation wavelength column from the matrix
 T(:,1) = [];
@@ -30,7 +30,7 @@ colorbar;
 
 
 %% Yellow
-T = readmatrix('Yellow_S.CSV');
+T = readmatrix('samples/Yellow_S.CSV');
 x = T(:,1);
 y = 300:10:700;
 
@@ -51,7 +51,7 @@ colormap(jet); % Example: using the 'jet' colormap
 caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.4]); % Adjust the color limits
 colorbar;
 %% Orange_Yellow
-T = readmatrix('Orange_Yellow_S.CSV');
+T = readmatrix('samples/Orange_Yellow_S.CSV');
 x = T(:,1);
 y = 300:10:700;
 
@@ -73,7 +73,7 @@ caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.4]); % Adjust the color limi
 colorbar;
 
 %% Pink and violet
-T = readmatrix('Pink_Violet_S.CSV');
+T = readmatrix('samples/Pink_Violet_S.CSV');
 x = T(:,1);
 y = 300:10:700;
 
@@ -94,7 +94,7 @@ colormap(jet); % Example: using the 'jet' colormap
 caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.4]); % Adjust the color limits
 colorbar;
 %% green
-T = readmatrix('Green_S.CSV');
+T = readmatrix('samples/Green_S.CSV');
 x = T(:,1);
 y = 300:10:700;
 
