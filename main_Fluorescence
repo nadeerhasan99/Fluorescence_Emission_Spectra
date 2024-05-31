@@ -1,0 +1,119 @@
+clear 
+clc 
+
+
+% Load data
+T = readmatrix('Pink_Green_S.CSV');
+x = T(:,1); % Excitation wavelength range
+y = 300:10:700; % Emission wavelength range
+
+% Remove the excitation wavelength column from the matrix
+T(:,1) = [];
+
+% Save fluorescent data into a matrix
+Fluo_matrix = T;
+
+% Plotting data
+figure;
+subplot(3,2,1)
+pcolor(x, y, Fluo_matrix');
+shading interp
+xlabel('Emission Wavelength (nm)');
+ylabel('Excitation Wavelength (nm)');
+colorbar
+title('Red-Green Sample');
+
+% Enhancing visibility by adjusting the colormap and color limits
+colormap(jet); % Example: using the 'jet' colormap
+caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.1]); % Adjust the color limits
+colorbar;
+
+
+%% Yellow
+T = readmatrix('Yellow_S.CSV');
+x = T(:,1);
+y = 300:10:700;
+
+% Saving the Fluorencent data into a matrix 
+T(:,1) = [];
+Fluo_matrix = T;
+
+% Plotting data
+subplot(3,2,2)
+pcolor(x,y, Fluo_matrix');
+shading interp
+xlabel('Emission Wavelength (nm)');
+ylabel('Excitation Wavelength (nm)');
+colorbar
+title("Yellow Sample")
+% Enhancing visibility by adjusting the colormap and color limits
+colormap(jet); % Example: using the 'jet' colormap
+caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.4]); % Adjust the color limits
+colorbar;
+%% Orange_Yellow
+T = readmatrix('Orange_Yellow_S.CSV');
+x = T(:,1);
+y = 300:10:700;
+
+% Saving the Fluorencent data into a matrix 
+T(:,1) = [];
+Fluo_matrix = T;
+
+% Plotting data
+subplot(3,2,3)
+pcolor(x,y, Fluo_matrix');
+shading interp
+xlabel('Emission Wavelength (nm)');
+ylabel('Excitation Wavelength (nm)');
+colorbar
+title("Orange-Yellow Sample")
+% Enhancing visibility by adjusting the colormap and color limits
+colormap(jet); % Example: using the 'jet' colormap
+caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.4]); % Adjust the color limits
+colorbar;
+
+%% Pink and violet
+T = readmatrix('Pink_Violet_S.CSV');
+x = T(:,1);
+y = 300:10:700;
+
+% Saving the Fluorencent data into a matrix 
+T(:,1) = [];
+Fluo_matrix = T;
+
+% Plotting data
+subplot(3,2,4)
+pcolor(x,y, Fluo_matrix');
+shading interp
+xlabel('Emission Wavelength (nm)');
+ylabel('Excitation Wavelength (nm)');
+colorbar
+title("Red Sample")
+% Enhancing visibility by adjusting the colormap and color limits
+colormap(jet); % Example: using the 'jet' colormap
+caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.4]); % Adjust the color limits
+colorbar;
+%% green
+T = readmatrix('Green_S.CSV');
+x = T(:,1);
+y = 300:10:700;
+
+% Saving the Fluorencent data into a matrix 
+T(:,1) = [];
+Fluo_matrix = T;
+row_indices = 1:100:4001;
+selected_rows = T(row_indices, :);
+
+% Plotting data
+subplot(3,2,5)
+
+pcolor(x,y, Fluo_matrix');
+shading interp
+xlabel('Emission Wavelength (nm)');
+ylabel('Excitation Wavelength (nm)');
+colorbar
+title("Green Sample")
+% Enhancing visibility by adjusting the colormap and color limits
+colormap(jet); % Example: using the 'jet' colormap
+caxis([min(Fluo_matrix(:)), max(Fluo_matrix(:)) * 0.1]); % Adjust the color limits
+colorbar;
